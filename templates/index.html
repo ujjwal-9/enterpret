@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summarization</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            color: #333;
+            resize: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group textarea:focus,
+        .form-group textarea:hover,
+        .form-group textarea:active {
+            border-color: #4285f4;
+            outline: none;
+        }
+        
+        .form-group .submit-btn {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-group .submit-btn:hover {
+            background-color: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summarization</h1>
+        <form action="/summarize" method="post">
+            <div class="form-group">
+                <label for="application">Application</label>
+                <select name="application" id="application">
+                    <option value="" selected disabled>Select an application</option>
+                    <option value="Figma">Figma</option>
+                    <option value="Notion">Notion</option>
+                    <option value="Zoom">Zoom</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="platform">Platform</label>
+                <select name="platform" id="platform">
+                    <option value="" selected disabled>Select a platform</option>
+                    <option value="Twitter">Twitter</option>
+                    <option value="Appstore/Playstore">Appstore/Playstore</option>
+                    <option value="G2">G2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="text">Enter your text</label>
+                <textarea name="text" id="text" rows="5" placeholder="Enter your text..." style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"></textarea>
+            </div>
+            <input class="submit-btn" type="submit" value="Summarize">
+        </form>
+    </div>
+</body>
+</html>
